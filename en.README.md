@@ -225,10 +225,10 @@ max_wal_senders = 0
     - `off`: Doesn't archive WAL. Only crash recovery.
     - `on`: Archives WAL when **closing** segments (this is the standard).
     - `always`: Archives even segments used by streaming replicas. Useful if you need to **guarantee copies** without depending on replicas.
-- `archive_command`:
+- `archive_command`
     - This is the command that executes when a WAL segment is ready to be archived.
     - You can also use `rsync -a %p <path>/%f` instead of just cp.
-- `max_wal_senders`:
+- `max_wal_senders`
     - This is the maximum number of processes that can send WAL to replicas.
     - Only important if there are standby servers.
 
